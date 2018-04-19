@@ -101,10 +101,12 @@ int main(void)
   Dogs102x6_setBacklight(brightness);
   Dogs102x6_setContrast(contrast);
   Dogs102x6_clearScreen();
-  Dogs102x6_stringDraw(1,1,"Welcome",DOGS102x6_DRAW_NORMAL);
+  Dogs102x6_stringDraw(1,17,"Welcome to",DOGS102x6_DRAW_NORMAL);
+  Dogs102x6_stringDraw(2,25,"CE 4370",DOGS102x6_DRAW_NORMAL);
+  Dogs102x6_stringDraw(3,10,"Final Project!",DOGS102x6_DRAW_NORMAL);
   for(i = 1;i<=5;i++)
   __delay_cycles(200000);
-  //startup_function();
+  startup_function();
   options_menu();
 
   //UART Init
@@ -134,9 +136,8 @@ int main(void)
 }
 
 void startup_function() {
-    Dogs102x6_stringDraw(1,1,"Welcome",DOGS102x6_DRAW_NORMAL);
     int i;
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 7; i++) {
         if (i % 2) {
             P1OUT |= BIT0;
             P8OUT |= BIT1;
